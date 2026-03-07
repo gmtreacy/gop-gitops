@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: gop-code
-          image: gmtreacy2/gop-code:latest
+          image: gmtreacy2/gop-code:8d6ef20
           ports:
             - containerPort: 8080
           livenessProbe:
