@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gop-code
+  labels:
+    app: gop-code
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gop-code
+  template:
+    metadata:
+      labels:
+        app: gop-code
+    spec:
+      containers:
+        - name: gop-code
+          image: gmtreacy2/gop-code:latest
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 5
