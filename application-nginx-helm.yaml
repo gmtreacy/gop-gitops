@@ -15,6 +15,10 @@ spec:
         replicaCount: 2
         service:
           type: ClusterIP
+        tolerations:
+          - effect: NoExecute
+            key: no-worker
+            operator: Exists
   destination:
     server: https://kubernetes.default.svc
     namespace: nginx
