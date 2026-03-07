@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-     repoURL: https://github.com/gmtreacy/gop-devops.git
+     repoURL: https://github.com/gmtreacy/gop-gitops.git
      targetRevision: HEAD
      path: dev
   destination:
