@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gop-code-kust
+  labels:
+    app: gop-code-kust
+spec:
+  type: ClusterIP
+  selector:
+    app: gop-code-kust
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
