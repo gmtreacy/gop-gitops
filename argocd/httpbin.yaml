@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: matheusfm.dev/charts
-    chart: matheusfm/httpbinx
+    chart: httpbinx
     targetRevision: 0.1.1
     helm:
       releaseName: httpbin
