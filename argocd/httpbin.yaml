@@ -12,6 +12,8 @@ spec:
     helm:
       releaseName: httpbin
       values: |
+        service:
+          type: NodePort
         tolerations:
           - effect: NoExecute
             key: no-worker
