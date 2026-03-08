@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gop-code-kust
+  labels:
+    app: gop-code-kust
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gop-code-kust
+  template:
+    metadata:
+      labels:
+        app: gop-code-kust
+    spec:
+      containers:
+        - name: gop-code-kust
+          image: gmtreacy2/gop-code:8d6ef20
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 5
+      tolerations:
+      - effect: NoExecute
+        key: no-worker
+        operator: Exists
