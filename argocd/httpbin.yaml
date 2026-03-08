@@ -11,6 +11,11 @@ spec:
     targetRevision: 0.1.1
     helm:
       releaseName: httpbin
+      values: |
+        tolerations:
+          - effect: NoExecute
+            key: no-worker
+            operator: Exists
   destination:
     server: https://kubernetes.default.svc
     namespace: default
