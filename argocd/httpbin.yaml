@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: matheusfm.dev/charts
-    chart: httpbinx
+    repoURL: https://matheusfm.dev/charts
+    chart: httpbin
     targetRevision: 0.1.1
     helm:
       releaseName: httpbin
