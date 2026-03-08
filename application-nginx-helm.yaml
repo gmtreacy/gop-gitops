@@ -8,10 +8,14 @@ spec:
   source:
     repoURL: registry-1.docker.io/bitnamicharts
     chart: nginx
-    targetRevision: 15.9.0
+    targetRevision: 18.3.1
     helm:
       releaseName: nginx
       values: |
+        image:
+          registry: docker.io
+          repository: bitnami/nginx
+          tag: latest
         replicaCount: 2
         service:
           type: ClusterIP
