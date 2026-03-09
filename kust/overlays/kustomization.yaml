@@ -16,4 +16,4 @@ patches:
       metadata:
         name: gop-code-kust
       spec:
-        replicas: 4
+        replicas: 6
